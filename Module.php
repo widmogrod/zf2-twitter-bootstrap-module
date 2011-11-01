@@ -1,6 +1,6 @@
 <?php
 
-namespace ZendSkeletonModule;
+namespace TwitterBootstrap;
 
 use Zend\Config\Config,
     Zend\Module\Manager,
@@ -25,6 +25,24 @@ class Module
                 ),
             ),
         ));
+    }
+
+    public function getProvides()
+    {
+        return array(
+            __NAMESPACE__ => array(
+                'version' => '0.1.0'
+            ),
+        );
+    }
+
+    public function getDependencies()
+    {
+        return array(
+            'Assetic' => array(
+                'version' => '0.2.0'
+            ),
+        );
     }
 
     public function getConfig($env = null)
