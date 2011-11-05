@@ -14,6 +14,24 @@ return array(
                     ),
                 ),
             ),
+            'assetic-configuration' => array(
+                'parameters' => array(
+                    'config' => array(
+                        'modules' => array(
+                            'twitterbootstrap' => array(
+                                'root_path' => __DIR__ . '/../assets',
+                                'collections' => array(
+                                    'twitter_bootstrap' => array(
+                                        'assets' => array(
+                                            'bootstrap.css'
+                                        )
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
         ),
     ),
 );
