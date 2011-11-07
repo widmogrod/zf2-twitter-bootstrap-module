@@ -23,15 +23,20 @@ class AdditionalElement extends AbstractDecorator
             return $content;
         }
 
+        $isActive = (bool) $element->getAttrib('isActive');
+
+        $tag = $this->getOption('tag');
+        $tag = empty($tag) ? 'span' : $tag;
+
         $class = $this->getOption('class');
         $class = trim($class);
         $class = array(
-            empty($class) ? 'clearfix' : $class,
+            'add-on',
+            empty($class) ?: $class,
+            $isActive ? 'active' : ''
         );
         $class = implode(' ', $class);
 
-        $tag = $this->getOption('tag');
-        $tag = empty($tag) ? 'div' : $tag;
 
         $additionalContent = $element->getAttrib('content');
         $additionalContent = empty($tag) ? '' : $additionalContent;

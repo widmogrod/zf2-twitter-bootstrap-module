@@ -26,7 +26,8 @@ class ElementWrapper extends AbstractDecorator
         $class = $this->getOption('class');
         $class = trim($class);
         $class = array(
-            empty($class) ? 'clearfix' : $class,
+            'clearfix',
+            empty($class) ?: $class,
         );
 
         if ($element->hasErrors()) {

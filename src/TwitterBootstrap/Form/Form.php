@@ -22,8 +22,21 @@ class Form extends \Zend\Form\Form
             'helper' => 'text',
             'decorators' => array(
                 'ViewHelper',
-                array('AdditionalElement', array('tag' => 'span', 'class' => 'add-on', 'placement' => 'PREPEND')),
+                array('AdditionalElement', array('placement' => 'PREPEND')),
                 array(array('input' => 'HtmlTag'), array('tag' => 'div', 'class' => 'input-prepend')),
+                array('Errors', array('tag' => 'span', 'class' => 'help-inline')),
+                array('Description', array('tag' => 'span', 'class' => 'help-block')),
+                array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
+                'Label',
+                'ElementWrapper'
+            ),
+        ),
+        'appendtext' => array(
+            'helper' => 'text',
+            'decorators' => array(
+                'ViewHelper',
+                array('AdditionalElement', array('placement' => 'APPEND')),
+                array(array('input' => 'HtmlTag'), array('tag' => 'div', 'class' => 'input-append')),
                 array('Errors', array('tag' => 'span', 'class' => 'help-inline')),
                 array('Description', array('tag' => 'span', 'class' => 'help-block')),
                 array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
