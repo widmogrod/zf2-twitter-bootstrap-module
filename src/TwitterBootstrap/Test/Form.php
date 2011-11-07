@@ -9,7 +9,7 @@ class Form extends \TwitterBootstrap\Form\Form
 {
     public function init()
     {
-        $this->setMethod(self::METHOD_POST);
+        $this->setMethodg(self::METHOD_POST);
 
         $this->addElement('text', 'title', array(
             'label' => 'Title',
