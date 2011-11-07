@@ -7,8 +7,33 @@ namespace TwitterBootstrap\Form;
 
 class Form extends \Zend\Form\Form
 {
+    const DISPLAY_GROUP_ACTION = 'actions';
+
+    private $customeElementDecoratorDefault = array(
+        'ViewHelper',
+        array('Errors', array('tag' => 'span', 'class' => 'help-inline')),
+        array('Description', array('tag' => 'span', 'class' => 'help-block')),
+        array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
+        'Label',
+        'ElementWrapper'
+    );
+
     private $customeElementDecorators = array(
         'text' => array(
+            'decorators' => array(
+                'ViewHelper',
+                array('Errors', array('tag' => 'span', 'class' => 'help-inline')),
+                array('Description', array('tag' => 'span', 'class' => 'help-block')),
+                array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
+                'Label',
+                'ElementWrapper'
+            ),
+        ),
+        'textarea' => array(
+            'options' => array(
+                'class' => 'xxlarge',
+                'rows' => 3
+            ),
             'decorators' => array(
                 'ViewHelper',
                 array('Errors', array('tag' => 'span', 'class' => 'help-inline')),
@@ -44,6 +69,21 @@ class Form extends \Zend\Form\Form
                 'ElementWrapper'
             ),
         ),
+        'button' => array(
+            'options' => array(
+                'class' => 'btn'
+            ),
+        ),
+        'reset' => array(
+            'options' => array(
+                'class' => 'btn'
+            ),
+        ),
+        'submit' => array(
+            'options' => array(
+                'class' => 'btn primary'
+            ),
+        ),
     );
 
     public function __construct($options = null)
@@ -54,39 +94,87 @@ class Form extends \Zend\Form\Form
 
     public function addElement($element, $name = null, $options = null)
     {
-//        $getId = function(Decorator $decorator) {
-//            return $decorator->getElement()->getId() . '-element';
-//        };
-
         if (is_string($element))
         {
             $element = strtolower($element);
             if (isset($this->customeElementDecorators[$element]))
             {
                 $baseOptions = $this->customeElementDecorators[$element];
-                $baseElement = $element;
-                $decorators = $baseOptions['decorators'];
-                $options['decorators'] = (isset($options['decorators']))
-                        ? array_merge($options['decorators'], $decorators)
-                        : $decorators;
 
-                $element = (isset($baseOptions['helper']))
-                        ? $baseOptions['helper']
-                        : $element;
+                if (isset($baseOptions['decorators']))
+                {
+                    $decorators = $baseOptions['decorators'];
+                    $options['decorators'] = (isset($options['decorators']))
+                            ? array_merge($options['decorators'], $decorators)
+                            : $decorators;
+                }
+                else
+                {
+                    $options['decorators'] = $this->customeElementDecoratorDefault;
+                }
 
-                $return = parent::addElement($element, $name, $options);
+                if (isset($baseOptions['helper'])) {
+                    $element = $baseOptions['helper'];
+                }
 
-//                $methodPostAdd = 'handlePostAdd'.ucfirst($baseElement);
-//                if (method_exists($this, $methodPostAdd))
-//                {
-//                    $this->$methodPostAdd($element);
-//                }
+                if (isset($baseOptions['options']))
+                {
+                    foreach($baseOptions['options'] as $key => $value)
+                    {
+                        if (!isset($options[$key])) {
+                            $options[$key] = null;
+                        }
 
-                return $return;
+                        switch($key)
+                        {
+                            case 'class':
+                                $options[$key] .= ' '.$baseOptions['options'][$key];
+                                break;
+
+                            case 'rows':
+                                $options[$key] = (null !== $options[$key]) ?: $baseOptions['options'][$key];
+                                break;
+
+                            default:
+                                throw new \InvalidArgumentException('Merging option key "'.$key.'" is not defained');
+                        }
+                    }
+                }
+
+                return parent::addElement($element, $name, $options);
             }
         }
 
         return parent::addElement($element, $name, $options);
+    }
+
+    /**
+     * @param string $element
+     * @param string $name
+     * @param null|array $options
+     * @return void
+     */
+    public function addActionElement($element, $name, $options = null)
+    {
+        $this->addElement($element, $name, $options);
+        $element = $this->getElement($name);
+
+        /* @var $displayGroup \Zend\Form\DisplayGroup */
+        $displayGroup = $this->getDisplayGroup(self::DISPLAY_GROUP_ACTION);
+        if (!$displayGroup instanceof \Zend\Form\DisplayGroup)
+        {
+            $elements = array(
+                $name
+            );
+            $options = array(
+                'displayGroupClass' => 'TwitterBootstrap\Form\DisplayGroup\Actions'
+            );
+            $this->addDisplayGroup($elements, self::DISPLAY_GROUP_ACTION, $options);
+        }
+        else
+        {
+            $displayGroup->addElement($element);
+        }
     }
 
     public function loadDefaultDecorators()
@@ -104,17 +192,4 @@ class Form extends \Zend\Form\Form
         }
         return $this;
     }
-
-    /*
-     * Handlers for post add element action.
-     */
-
-//    private function handlePostAddPrependedtext($elementName, array $options = null)
-//    {
-//        if (isset($options['prependtext']))
-//        {
-//            $element = $this->getElement($elementName);
-//            $element->getDecorator('prependtext')->setContent($options['prependtext']);
-//        }
-//    }
 }
