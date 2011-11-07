@@ -18,6 +18,10 @@ class Form extends \Zend\Form\Form
         'ElementWrapper'
     );
 
+    private $customeActionElementDecorator = array(
+        'ViewHelper',
+    );
+
     private $customeElementDecorators = array(
         'text' => array(
             'decorators' => array(
@@ -101,16 +105,19 @@ class Form extends \Zend\Form\Form
             {
                 $baseOptions = $this->customeElementDecorators[$element];
 
-                if (isset($baseOptions['decorators']))
+                if (!isset($options['decorators']))
                 {
-                    $decorators = $baseOptions['decorators'];
-                    $options['decorators'] = (isset($options['decorators']))
-                            ? array_merge($options['decorators'], $decorators)
-                            : $decorators;
-                }
-                else
-                {
-                    $options['decorators'] = $this->customeElementDecoratorDefault;
+                    if (isset($baseOptions['decorators']))
+                    {
+                        $decorators = $baseOptions['decorators'];
+                        $options['decorators'] = (isset($options['decorators']))
+                                ? array_merge($options['decorators'], $decorators)
+                                : $decorators;
+                    }
+                    else
+                    {
+                        $options['decorators'] = $this->customeElementDecoratorDefault;
+                    }
                 }
 
                 if (isset($baseOptions['helper'])) {
@@ -156,6 +163,14 @@ class Form extends \Zend\Form\Form
      */
     public function addActionElement($element, $name, $options = null)
     {
+        if (null === $options) {
+            $options = array();
+        } elseif ($options instanceof Config) {
+            $options = $options->toArray();
+        }
+
+        $options['decorators'] = $this->customeActionElementDecorator;
+
         $this->addElement($element, $name, $options);
         $element = $this->getElement($name);
 
@@ -173,6 +188,7 @@ class Form extends \Zend\Form\Form
         }
         else
         {
+            unset($this->_order[$name]);
             $displayGroup->addElement($element);
         }
     }
