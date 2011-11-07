@@ -15,13 +15,13 @@ class Form extends \TwitterBootstrap\Form\Form
             'label' => 'Title',
         ));
 
-        $this->addElement('prependedtext', 'prepended_title', array(
+        $this->addElement(self::ELEMENT_PREPENDED_TEXT, 'prepended_title', array(
             'label' => 'Prepended text',
             'content' => '@',
             'description' => 'Here\'s some help text'
         ));
 
-        $this->addElement('appendtext', 'appendtext_title', array(
+        $this->addElement(self::ELEMENT_APPENDED_TEXT, 'appendtext_title', array(
             'label' => 'Appended checkbox',
             'content' => '<input type="checkbox"/>',
              'isActive' => true,

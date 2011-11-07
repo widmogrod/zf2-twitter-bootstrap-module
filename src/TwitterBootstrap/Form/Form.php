@@ -9,6 +9,9 @@ class Form extends \Zend\Form\Form
 {
     const DISPLAY_GROUP_ACTION = 'actions';
 
+    const ELEMENT_PREPENDED_TEXT = 'prependedtext';
+    const ELEMENT_APPENDED_TEXT = 'appendedtext';
+
     private $customeElementDecoratorDefault = array(
         'ViewHelper',
         array('Errors', array('tag' => 'span', 'class' => 'help-inline')),
@@ -47,7 +50,7 @@ class Form extends \Zend\Form\Form
                 'ElementWrapper'
             ),
         ),
-        'prependedtext' => array(
+        self::ELEMENT_PREPENDED_TEXT => array(
             'helper' => 'text',
             'decorators' => array(
                 'ViewHelper',
@@ -60,7 +63,7 @@ class Form extends \Zend\Form\Form
                 'ElementWrapper'
             ),
         ),
-        'appendtext' => array(
+        self::ELEMENT_APPENDED_TEXT => array(
             'helper' => 'text',
             'decorators' => array(
                 'ViewHelper',
@@ -88,6 +91,8 @@ class Form extends \Zend\Form\Form
                 'class' => 'btn primary'
             ),
         ),
+        'select' => array(),
+        'form' => array(),
     );
 
     public function __construct($options = null)
@@ -204,6 +209,7 @@ class Form extends \Zend\Form\Form
         if (empty($decorators)) {
             $this->addDecorator('FormElements')
                  ->addDecorator('HtmlTag', array('tag' => 'div', 'class' => 'zend_form'))
+                 ->addDecorator('Fieldset')
                  ->addDecorator('FormDecorator');
         }
         return $this;
