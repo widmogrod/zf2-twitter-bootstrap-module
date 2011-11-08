@@ -13,6 +13,7 @@ class Form extends \TwitterBootstrap\Form\Form
 
         $this->addElement('text', 'title', array(
             'label' => 'Title',
+            'required' => true,
         ));
 
         $this->addElement(self::ELEMENT_PREPENDED_TEXT, 'prepended_title', array(
