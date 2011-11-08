@@ -22,7 +22,7 @@ class TestController extends ActionController
             return $result;
         }
 
-        if (!$form->isValid($rq->post())) {
+        if (!$form->isValid($rq->post()->toArray())) {
             return $result;
         }
 
