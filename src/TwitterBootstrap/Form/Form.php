@@ -14,7 +14,7 @@ class Form extends \Zend\Form\Form
 
     private $customeElementDecoratorDefault = array(
         'ViewHelper',
-        array('Errors', array('tag' => 'span', 'class' => 'help-inline')),
+        array('Errors', array('class' => 'help-inline')),
         array('Description', array('tag' => 'span', 'class' => 'help-block')),
         array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
         'Label',
@@ -29,7 +29,7 @@ class Form extends \Zend\Form\Form
         'text' => array(
             'decorators' => array(
                 'ViewHelper',
-                array('Errors', array('tag' => 'span', 'class' => 'help-inline')),
+                array('Errors', array('class' => 'help-inline')),
                 array('Description', array('tag' => 'span', 'class' => 'help-block')),
                 array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
                 'Label',
@@ -43,7 +43,7 @@ class Form extends \Zend\Form\Form
             ),
             'decorators' => array(
                 'ViewHelper',
-                array('Errors', array('tag' => 'span', 'class' => 'help-inline')),
+                array('Errors', array('class' => 'help-inline')),
                 array('Description', array('tag' => 'span', 'class' => 'help-block')),
                 array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
                 'Label',
@@ -56,7 +56,7 @@ class Form extends \Zend\Form\Form
                 'ViewHelper',
                 array('AdditionalElement', array('placement' => 'PREPEND')),
                 array(array('input' => 'HtmlTag'), array('tag' => 'div', 'class' => 'input-prepend')),
-                array('Errors', array('tag' => 'span', 'class' => 'help-inline')),
+                array('Errors', array('class' => 'help-inline')),
                 array('Description', array('tag' => 'span', 'class' => 'help-block')),
                 array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
                 'Label',
@@ -69,7 +69,7 @@ class Form extends \Zend\Form\Form
                 'ViewHelper',
                 array('AdditionalElement', array('placement' => 'APPEND')),
                 array(array('input' => 'HtmlTag'), array('tag' => 'div', 'class' => 'input-append')),
-                array('Errors', array('tag' => 'span', 'class' => 'help-inline')),
+                array('Errors', array('class' => 'help-inline')),
                 array('Description', array('tag' => 'span', 'class' => 'help-block')),
                 array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
                 'Label',
