@@ -21,11 +21,17 @@ return array(
                             'twitterbootstrap' => array(
                                 'root_path' => __DIR__ . '/../assets',
                                 'collections' => array(
-                                    'twitter_bootstrap' => array(
+                                    'twitter_bootstrap_css' => array(
                                         'assets' => array(
                                             'bootstrap.css'
                                         )
                                     ),
+//                                    'twitter_bootstrap_js' => array(
+//                                        'assets' => array(
+//                                            'http://code.jquery.com/jquery-1.5.2.min.js',
+//                                            'js/bootstrap-dropdown.js'
+//                                        )
+//                                    ),
                                 ),
                             ),
                         ),
