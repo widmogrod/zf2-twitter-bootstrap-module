@@ -17,6 +17,19 @@ return array(
             'assetic-configuration' => array(
                 'parameters' => array(
                     'config' => array(
+
+                        /**
+                         * Example, defaining that 'default' route will use twitter bootstrap css
+                         * Setup your application or module, to use this section, if required.
+                         */
+                        /** /
+                        'routers' => array(
+                            'default' => array(
+                                '@twitter_bootstrap_css'
+                            )
+                        ),
+                        /**/
+
                         'modules' => array(
                             'twitterbootstrap' => array(
                                 'root_path' => __DIR__ . '/../assets',
@@ -26,6 +39,8 @@ return array(
                                             'bootstrap.css'
                                         )
                                     ),
+
+                                    # todo
 //                                    'twitter_bootstrap_js' => array(
 //                                        'assets' => array(
 //                                            'http://code.jquery.com/jquery-1.5.2.min.js',
