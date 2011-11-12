@@ -39,7 +39,7 @@ class Module
     public function getDependencies()
     {
         return array(
-            'Assetic' => array(
+            'AsseticBundle' => array(
                 'version' => '>=0.1.0',
                 'required' => true
             ),
