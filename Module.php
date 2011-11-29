@@ -4,18 +4,18 @@ namespace TwitterBootstrap;
 
 use Zend\Config\Config,
     Zend\Module\Manager,
-    Zend\Loader\AutoloaderFactory;
+    Zend\Module\Consumer\AutoloaderProvider;
 
-class Module
+class Module implements AutoloaderProvider
 {
-    public function init(Manager $moduleManager)
+    /**
+     * Return an array for passing to Zend\Loader\AutoloaderFactory.
+     *
+     * @return array
+     */
+    public function getAutoloaderConfig()
     {
-        $this->initAutoloader();
-    }
-
-    public function initAutoloader()
-    {
-        AutoloaderFactory::factory(array(
+        return array(
             'Zend\Loader\ClassMapAutoloader' => array(
                 __DIR__ . '/autoload_classmap.php',
             ),
@@ -24,7 +24,7 @@ class Module
                     __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
                 ),
             ),
-        ));
+        );
     }
 
     public function getProvides()

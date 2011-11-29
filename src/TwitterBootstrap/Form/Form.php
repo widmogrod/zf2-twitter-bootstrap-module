@@ -36,6 +36,16 @@ class Form extends \Zend\Form\Form
                 'ElementWrapper'
             ),
         ),
+        'file' => array(
+            'decorators' => array(
+                'File',
+                array('Errors', array('class' => 'help-inline')),
+                array('Description', array('tag' => 'span', 'class' => 'help-block')),
+                array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
+                'Label',
+                'ElementWrapper'
+            ),
+        ),
         'textarea' => array(
             'options' => array(
                 'class' => 'xxlarge',
