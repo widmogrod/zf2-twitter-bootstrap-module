@@ -102,6 +102,7 @@ class Form extends \Zend\Form\Form
             ),
         ),
         'select' => array(),
+        'checkbox' => array(),
         'form' => array(),
     );
 
