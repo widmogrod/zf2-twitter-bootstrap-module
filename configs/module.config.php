@@ -36,17 +36,62 @@ return array(
                                 'collections' => array(
                                     'twitter_bootstrap_css' => array(
                                         'assets' => array(
-                                            'bootstrap.css'
+                                            'bootstrap.min.css'
                                         )
                                     ),
 
-                                    # todo
-//                                    'twitter_bootstrap_js' => array(
-//                                        'assets' => array(
-//                                            'http://code.jquery.com/jquery-1.5.2.min.js',
-//                                            'js/bootstrap-dropdown.js'
-//                                        )
-//                                    ),
+                                    'twitter_bootstrap_jquery' => array(
+                                        'assets' => array(
+                                            'http://code.jquery.com/jquery-1.5.2.min.js',
+                                        )
+                                    ),
+                                    'twitter_bootstrap_modal_js' => array(
+                                        'assets' => array(
+                                            'js/bootstrap-modal.js'
+                                        )
+                                    ),
+                                    'twitter_bootstrap_alerts_js' => array(
+                                        'assets' => array(
+                                            'js/bootstrap-alerts.js'
+                                        )
+                                    ),
+                                    'twitter_bootstrap_dropdown_js' => array(
+                                        'assets' => array(
+                                            'js/bootstrap-dropdown.js'
+                                        )
+                                    ),
+                                    'twitter_bootstrap_popover_js' => array(
+                                        'assets' => array(
+                                            'js/bootstrap-popover.js'
+                                        )
+                                    ),
+                                    'twitter_bootstrap_scrollspy_js' => array(
+                                        'assets' => array(
+                                            'js/bootstrap-scrollspy.js'
+                                        )
+                                    ),
+                                    'twitter_bootstrap_tabs_js' => array(
+                                        'assets' => array(
+                                            'js/bootstrap-tabs.js'
+                                        )
+                                    ),
+                                    'twitter_bootstrap_twipsy_js' => array(
+                                        'assets' => array(
+                                            'js/bootstrap-twipsy.js'
+                                        )
+                                    ),
+                                    'twitter_bootstrap_js' => array(
+                                        'assets' => array(
+                                            '@twitter_bootstrap_modal_js',
+                                            '@twitter_bootstrap_alerts_js',
+                                            '@twitter_bootstrap_dropdown_js',
+                                            '@twitter_bootstrap_popover_js',
+                                            '@twitter_bootstrap_scrollspy_js',
+                                            '@twitter_bootstrap_tabs_js',
+                                            '@twitter_bootstrap_twipsy_js'
+                                        )
+                                    ),
+
                                 ),
                             ),
                         ),

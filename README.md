@@ -2,6 +2,8 @@
 
 TwitterBootstrap is Zend Framework 2 module, which add integration with [twitter bootstrap toolkit](https://github.com/twitter/bootstrap).
 
+*P.S.* Sory for my english. If You wish to help me with this project or correct my english description - You are welcome :)
+
 ## Requirements
 
 * Zend Framework 2 (https://github.com/zendframework/zf2)
@@ -63,12 +65,13 @@ class Form extends \TwitterBootstrap\Form\Form
 ```
 
 
-## TODO
+## Project plan
 
-* Messenger integration
-* View helper for alerts&errors
-* Configuration option witch allow use bootstrap with less
-* Create simple DataGrid
-* create better stylesheet & JS attachment
+* TODO
+   * Messenger integration
+   * View helper for alerts&errors
+   * Configuration option witch allow use bootstrap with less
+   * Create simple DataGrid
 
-P.S. Sorry for my bad english.
+* DONE
+   * create better stylesheet & JS attachment
