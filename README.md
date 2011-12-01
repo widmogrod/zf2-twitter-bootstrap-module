@@ -15,8 +15,8 @@ Simplest way:
 
   1. cd my/project/folder
   2. git clone git://github.com/widmogrod/zf2-twitter-bootstrap-module.git modules/TwitterBootstrap --recursive
-  3. git clone git://github.com/widmogrod/zf2-assetic-module.git modules/Assetic --recursive
-  4. open my/project/folder/configs/application.config.php and add 'TwitterBootstrap' and 'Assetic' to your 'modules' parameter.
+  3. git clone git@github.com:widmogrod/zf2-datagrid-bundle.git modules/AsseticBundle --recursive
+  4. open my/project/folder/configs/application.config.php and add 'TwitterBootstrap' and 'AsseticBundle' to your 'modules' parameter.
   5. run in browser your project ie. http://example.com/twittertest
 
 
