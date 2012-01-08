@@ -41,7 +41,9 @@ Stylesheet attachment to HTML document is done automaticly by [zf2-assetic-modul
 
 ```
 <?php
-// SIMPLE EXAMPLE
+/*
+ * SIMPLE EXAMPLE
+ */
 class Form extends \TwitterBootstrap\Form\Form
 {
     public function init()
@@ -77,13 +79,17 @@ class Form extends \TwitterBootstrap\Form\Form
         ));
     }
 }
+
 ?>
 ```
 
 
 ```
 <?php
-// ADVENCE EXAMPLE
+/*
+ * ADVENCE EXAMPLE
+ */
+
 namespace Quiz\Form;
 
 use \TwitterBootstrap\Form as TwitterForm,
@@ -312,5 +318,6 @@ class Question extends TwitterForm\Form
         }
     }
 }
+
 ?>
 ```
