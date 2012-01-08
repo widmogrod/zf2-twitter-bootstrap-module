@@ -30,6 +30,12 @@ return array(
                         ),
                         /**/
 
+                        'controllers' => array(
+                            'twittertest' => array(
+                                '@twitter_bootstrap_css'
+                            )
+                        ),
+
                         'modules' => array(
                             'twitterbootstrap' => array(
                                 'root_path' => __DIR__ . '/../assets',

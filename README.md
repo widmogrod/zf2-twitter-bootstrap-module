@@ -37,8 +37,9 @@ Stylesheet attachment to HTML document is done automaticly by [zf2-assetic-modul
 
 # Zend\Form integration.
 
-Example output of Zend_Form:
-![Example output of Zend_Form](https://raw.github.com/widmogrod/zf2-twitter-bootstrap-module/master/docs/img/advence_form.png)
+## Simple example
+
+![Example output of Zend_Form](https://raw.github.com/widmogrod/zf2-twitter-bootstrap-module/master/docs/img/simple_example.png)
 
 ``` php
 <?php
@@ -84,6 +85,9 @@ class Form extends \TwitterBootstrap\Form\Form
 ?>
 ```
 
+## Advenced example
+
+![Example output of Zend_Form](https://raw.github.com/widmogrod/zf2-twitter-bootstrap-module/master/docs/img/advence_form.png)
 
 ``` php
 <?php
