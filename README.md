@@ -22,7 +22,7 @@ Simplest way:
 
 # Stylesheet attachment.
 
-Stylesheet attachment to HTML document is done automaticly by _zf2-assetic-module_ (this module is still in development).
+Stylesheet attachment to HTML document is done automaticly by [zf2-assetic-module](https://github.com/widmogrod/zf2-assetic-module) (this module is still in development).
 
 # Project plan
 
@@ -37,7 +37,7 @@ Stylesheet attachment to HTML document is done automaticly by _zf2-assetic-modul
 
 # Zend\Form integration.
 
-(https://raw.github.com/widmogrod/zf2-twitter-bootstrap-module/master/docs/img/advence_form.png)
+![Example output of Zend_Form](https://raw.github.com/widmogrod/zf2-twitter-bootstrap-module/master/docs/img/advence_form.png)
 
 ```
 <?php
