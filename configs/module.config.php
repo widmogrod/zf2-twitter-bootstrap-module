@@ -23,7 +23,7 @@ return array(
                          * Setup your application or module, to use this section, if required.
                          */
                         /** /
-                        'routers' => array(
+                        'routes' => array(
                             'default' => array(
                                 '@twitter_bootstrap_css'
                             )
