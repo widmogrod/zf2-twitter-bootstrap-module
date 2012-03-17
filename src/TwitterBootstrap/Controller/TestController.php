@@ -4,6 +4,7 @@ namespace TwitterBootstrap\Controller;
 
 use Zend\Mvc\Controller\ActionController;
 use TwitterBootstrap\Test\Form;
+use Zend\View\Model\ViewModel;
 
 class TestController extends ActionController
 {
@@ -14,9 +15,10 @@ class TestController extends ActionController
 
         $form = new Form();
 
-        $result = array(
-            'form' => $form
-        );
+        $result = new ViewModel();
+        $result->form = $form;
+
+        $this->plugin('Layout')->setTemplate('twittertest');
 
         if (!$rq->isPost()) {
             return $result;

@@ -1,0 +1,31 @@
+<?php echo $this->plugin('doctype')->setDoctype(\Zend\View\Helper\Doctype::HTML5); ?>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <?php
+    echo $this->plugin('HeadTitle');
+    echo $this->plugin('HeadMeta');
+    echo $this->plugin('HeadLink');
+    echo $this->plugin('HeadStyle');
+    echo $this->plugin('HeadScript');
+    ?>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+
+    </div>
+    <div id="wrapper">
+        <div id="main">
+            <?php echo $this->content; ?>
+        </div>
+    </div>
+    <div id="footer">
+
+    </div>
+</div>
+<?php
+echo $this->plugin('InlineScript');
+?>
+</body>
+</html>

@@ -14,8 +14,8 @@ TwitterBootstrap is Zend Framework 2 module, which add integration with [twitter
 Simplest way:
 
   1. cd my/project/folder
-  2. git clone git://github.com/widmogrod/zf2-twitter-bootstrap-module.git modules/TwitterBootstrap --recursive
-  3. git clone git@github.com:widmogrod/zf2-datagrid-bundle.git modules/AsseticBundle --recursive
+  2. git clone git://github.com/widmogrod/zf2-twitter-bootstrap-module.git module/TwitterBootstrap --recursive
+  3. git clone git@github.com:widmogrod/zf2-datagrid-bundle.git module/AsseticBundle --recursive
   4. open my/project/folder/configs/application.config.php and add 'TwitterBootstrap' and 'AsseticBundle' to your 'modules' parameter.
   5. run in browser your project ie. http://example.com/twittertest
 
@@ -94,11 +94,6 @@ class Form extends \TwitterBootstrap\Form\Form
 /*
  * ADVENCE EXAMPLE
  */
-
-namespace Quiz\Form;
-
-use \TwitterBootstrap\Form as TwitterForm,
-    \Quiz\Entity\Question as QuestionEntity;
 
 class Question extends TwitterForm\Form
 {

@@ -5,15 +5,24 @@ return array(
             'alias' => array(
                 'twittertest' => 'TwitterBootstrap\Controller\TestController',
             ),
-            'Zend\View\PhpRenderer' => array(
+
+//            'Zend\View\Resolver\TemplatePathStack' => array(
+//                'parameters' => array(
+//                    'paths'  => array(
+//                        'twittertest' => __DIR__ . '/../view',
+//                    ),
+//                ),
+//            ),
+
+            'Zend\View\Resolver\TemplateMapResolver' => array(
                 'parameters' => array(
-                    'options'  => array(
-                        'script_paths' => array(
-                            'twittertest' => __DIR__ . '/../views',
-                        ),
+                    'map'  => array(
+                        'twittertest/index' => __DIR__ . '/../view/twittertest/index.phtml',
+                        'twittertest' => __DIR__ . '/../view/layout/twittertest.phtml'
                     ),
                 ),
             ),
+
             'assetic-configuration' => array(
                 'parameters' => array(
                     'config' => array(

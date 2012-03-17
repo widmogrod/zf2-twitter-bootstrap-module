@@ -40,7 +40,7 @@ class Form extends \Zend\Form\Form
             'decorators' => array(
                 'File',
                 array('Errors', array('class' => 'help-inline')),
-                array('Description', array('tag' => 'span', 'class' => 'help-block')),
+                array('Description', array('tag' => 'span', 'class' => 'help-block', 'escape' => false)),
                 array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
                 'Label',
                 'ElementWrapper'
@@ -54,7 +54,7 @@ class Form extends \Zend\Form\Form
             'decorators' => array(
                 'ViewHelper',
                 array('Errors', array('class' => 'help-inline')),
-                array('Description', array('tag' => 'span', 'class' => 'help-block')),
+                array('Description', array('tag' => 'span', 'class' => 'help-block', 'escape' => false)),
                 array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
                 'Label',
                 'ElementWrapper'
@@ -67,7 +67,7 @@ class Form extends \Zend\Form\Form
                 array('AdditionalElement', array('placement' => 'PREPEND')),
                 array(array('input' => 'HtmlTag'), array('tag' => 'div', 'class' => 'input-prepend')),
                 array('Errors', array('class' => 'help-inline')),
-                array('Description', array('tag' => 'span', 'class' => 'help-block')),
+                array('Description', array('tag' => 'span', 'class' => 'help-block', 'escape' => false)),
                 array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
                 'Label',
                 'ElementWrapper'
@@ -80,7 +80,7 @@ class Form extends \Zend\Form\Form
                 array('AdditionalElement', array('placement' => 'APPEND')),
                 array(array('input' => 'HtmlTag'), array('tag' => 'div', 'class' => 'input-append')),
                 array('Errors', array('class' => 'help-inline')),
-                array('Description', array('tag' => 'span', 'class' => 'help-block')),
+                array('Description', array('tag' => 'span', 'class' => 'help-block', 'escape' => false)),
                 array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
                 'Label',
                 'ElementWrapper'
