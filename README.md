@@ -2,8 +2,7 @@
 
 TwitterBootstrap is Zend Framework 2 module, which add integration with [twitter bootstrap toolkit](https://github.com/twitter/bootstrap).
 
-
-*P.S.* Sory for my english. If You wish to help me with this project or correct my english description - You are welcome :)
+*P.S.* Sorry for my english. If You wish to help me with this project or correct my english description - You are welcome :)
 
 # Requirements
 
@@ -16,7 +15,7 @@ Simplest way:
 
   1. cd my/project/folder
   2. git clone git://github.com/widmogrod/zf2-twitter-bootstrap-module.git module/TwitterBootstrap --recursive
-  3. git clone git@github.com:widmogrod/zf2-datagrid-bundle.git module/AsseticBundle --recursive
+  3.  git clone https://github.com/widmogrod/zf2-assetic-module.git module/AsseticBundle/ --recursive
   4. open my/project/folder/configs/application.config.php and add 'TwitterBootstrap' and 'AsseticBundle' to your 'modules' parameter.
   5. run in browser your project ie. http://example.com/twittertest
 
@@ -86,14 +85,15 @@ class Form extends \TwitterBootstrap\Form\Form
 ?>
 ```
 
-## Advenced example
+## Complex example
 
 ![Example output of Zend_Form](https://raw.github.com/widmogrod/zf2-twitter-bootstrap-module/master/docs/img/advence_form.png)
 
 ``` php
 <?php
+
 /*
- * ADVENCE EXAMPLE
+ * Complex EXAMPLE
  */
 
 class Question extends TwitterForm\Form
