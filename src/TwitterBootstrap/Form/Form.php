@@ -30,7 +30,7 @@ class Form extends \Zend\Form\Form
             'decorators' => array(
                 'ViewHelper',
                 array('Errors', array('class' => 'help-inline')),
-                array('Description', array('tag' => 'span', 'class' => 'help-block')),
+                array('Description', array('tag' => 'span', 'class' => 'help-block', 'escape' => false)),
                 array('HtmlTag', array('tag' => 'div', 'class' => 'input')),
                 'Label',
                 'ElementWrapper'

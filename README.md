@@ -2,11 +2,12 @@
 
 TwitterBootstrap is Zend Framework 2 module, which add integration with [twitter bootstrap toolkit](https://github.com/twitter/bootstrap).
 
+
 *P.S.* Sory for my english. If You wish to help me with this project or correct my english description - You are welcome :)
 
 # Requirements
 
-* Zend Framework 2 (https://github.com/zendframework/zf2)
+* Zend Framework 2 (https://github.com/zendframework/zf2). Tested on **release-2.0.0beta3**.
 * ZF2 Assetic module (https://github.com/widmogrod/zf2-assetic-module)
 
 # Installation
