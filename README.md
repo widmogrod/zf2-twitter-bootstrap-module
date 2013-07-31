@@ -1,15 +1,17 @@
 # TwitterBootstrap
 
+## This module is not maintined (Works only with beta version of ZF2)
+
 TwitterBootstrap is Zend Framework 2 module, which add integration with [twitter bootstrap toolkit](https://github.com/twitter/bootstrap).
 
 *P.S.* Sorry for my english. If You wish to help me with this project or correct my english description - You are welcome :)
 
-# Requirements
+## Requirements
 
 * Zend Framework 2 (https://github.com/zendframework/zf2). Tested on **release-2.0.0beta3**.
 * ZF2 Assetic module (https://github.com/widmogrod/zf2-assetic-module)
 
-# Installation
+## Installation
 
 Simplest way:
 
@@ -20,11 +22,11 @@ Simplest way:
   5. run in browser your project ie. http://example.com/twittertest
 
 
-# Stylesheet attachment.
+## Stylesheet attachment.
 
 Stylesheet attachment to HTML document is done automaticly by [zf2-assetic-module](https://github.com/widmogrod/zf2-assetic-module) (this module is still in development).
 
-# Project plan
+## Project plan
 
 * TODO
    * Messenger integration
@@ -35,9 +37,9 @@ Stylesheet attachment to HTML document is done automaticly by [zf2-assetic-modul
 * DONE
    * create better stylesheet & JS attachment
 
-# Zend\Form integration.
+## Zend\Form integration.
 
-## Simple example
+### Simple example
 
 ![Example output of Zend_Form](https://raw.github.com/widmogrod/zf2-twitter-bootstrap-module/master/docs/img/simple_example.png)
 
@@ -85,7 +87,7 @@ class Form extends \TwitterBootstrap\Form\Form
 ?>
 ```
 
-## Complex example
+### Complex example
 
 ![Example output of Zend_Form](https://raw.github.com/widmogrod/zf2-twitter-bootstrap-module/master/docs/img/advence_form.png)
 
